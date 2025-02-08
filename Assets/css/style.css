@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: grey;
+    padding: 2px 40px; 
+}
+
+.main-menu {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+.mobile-menu {
+    display: none;
+    
+}
+
+.mobile-menu-list {
+    display: none;
+}
+
+.hamburger-button {
+        font-size: 30px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0;
+    }
+
+
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+.menu-active {
+    color: orangered !important;
+    font-weight: bold;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-contact-button {
+    text-decoration: none;
+    background-color: aquamarine;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+
+}
+
+
+.main-content {
+    display: flex;
+    gap: 50px;
+    padding: 50px;
+    flex-direction: row;
+    
+    }
+
+/* PROFILE CARD */
+#card-section {
+    flex: 1;
+}
+.profile-card {
+    border-style:solid; 
+    border-color: #aaa;
+    border-radius: 15px;
+    box-shadow: 10px 0px 18px #aaa;
+    /* width: 400px; */
+    /* padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px; */
+    /* margin: 100px auto; */
+    flex: 1;
+    padding: 15px;
+
+}
+
+/* PROFILE INTRODUCTION */
+
+#introduction {
+    flex: 2.5;
+}
+
+#what-i-do h1 {
+    margin-top: 0;
+
+}
+
+#technologies {
+    display: flex;
+    gap: 20px;
+}
+
+#socials h2 {
+    margin-top: 0;
+}
+    
+#socials a {
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+#socials a img {
+    width: 40px;
+}
+
+
+/* CONTACT FORM STYLES */
+
+.contact-form {
+    width: 500px;
+    margin: 30px auto;
+}
+
+.contact-form h1 {
+   text-align: center; 
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.form-field input, select, textarea {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #eaeaea;
+    border: 2px solid #d1d1d1;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    text-decoration: none;
+    background-color: aquamarine;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family: "Poppins", serif;
+    cursor: pointer;
+    
+}
+
+
+/* CREATE BLOG FORM STYLES */
+
+.create-blog-form {
+    width: 500px;
+    margin: 30px auto;
+}
+
+.create-blog-form h1 {
+    text-align: center;
+}
+
+.button-container {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.create-blog-form button {
+    font-size: 16px;
+    font-family: "Poppins", serif;
+    background-color: orangered;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* BLOG LIST STYLES */
+
+.blog-list {
+    width: 90%;
+    margin: 30px auto 300px;
+}
+
+.blog-item {
+    /* height: 300px; */
+    padding: 15px;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+
+.blog-item-img img {
+    /* height: 100%; */
+    width: 350px;
+}
+
+.blog-item-text {
+    /* background-color: aquamarine; */
+    flex: 1;
+}
+
+.blog-item-title {
+    color:black;
+    font-size: 24px;
+    margin: 0;
+}
+
+.blog-item-buttons {
+    text-align: right;
+}
+
+.blog-edit-button {
+    font-size: 16px;
+    font-family: "Poppins", serif;
+    background-color: #ccc;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.blog-post-button {
+    font-size: 16px;
+    font-family: "Poppins", serif;
+    background-color: orangered;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.blog-item-relative-time {
+   color: #aaa;
+   font-size: 14px;
+   text-align: right;
+    
+}
+
+/* BLOG DETAIL STYLES */
+
+.blog-detail {
+    width: 60%;
+    margin: 40px auto;
+}
+
+.blog-detail img {
+    width: 100%;
+}
+
+/* TESTIMONIAL STYLE */
+
+.testimonial-star-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.testimonial-star-buttons button {
+    font-size: 16px;
+    font-family: "Poppins", serif;
+    background-color: orangered;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.testimonial-list {
+    width: 90%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+}
+
+.testimonial-list article {
+    border: 1px solid #aaaa;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.testimonial-list article img {
+    width: 100%;
+}
+
+.testimonial-item-caption {
+    font-style: italic;
+    color: #777
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+       padding: 2px 15px;  
+    }
+
+    .main-menu {
+        display: none;
+    }
+
+    .menu-active {
+        background-color: orangered !important;
+        color: white !important;
+    }
+
+    .mobile-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-menu-show {
+        display: block;
+    
+    }
+    
+    .mobile-menu-hide {
+        display: none;
+    }
+
+    .mobile-menu-list a {
+        display: block;
+        text-decoration: none;
+        border: 1px solid #fff;
+        background-color: #aaa;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    #card-section {
+        padding: 30px;
+    }
+
+    #introduction {
+        padding: 0 30px 30px;
+    }
+
+    #technologies {
+        flex-direction: column;
+    }
+
+    #technologies img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #technologies h2 {
+        margin: 5px 0px;
+    }
+
+    /* CONTACT PAGE */
+    .contact-form {
+        width: 90%; 
+    }
+    
+
+    /* BLOG PAGE */
+
+    .create-blog-form {
+        width: 90%; 
+    }
+
+    .blog-item {
+        flex-direction: column;
+    }
+
+    .blog-item-img img {
+        width: 100%;
+    }
+
+    /* BLOG DETAIL PAGE */
+
+    .blog-detail {
+        width: 90%;
+        
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task One</title>
+    <link rel="icon" href="Assets/img/icon org.jpg" />
+    <script src="https://kit.fontawesome.com/85af102d73.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Assets/css/style.css" />
+
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav>
+        <div class="main-menu">
+
+        <ul class="navbar-links">
+            <img style="width: 80px;" src="Assets/img/logo web.png">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="blog.html">Blog</a>
+            </li>
+            <li>
+                <a href="testimonials.html" class="menu-active">Testimonials</a>
+            </li>
+
+        </ul>
+        <a class="nav-contact-button" href="contact.html">Contact Me</a>
+
+    </div>
+    <div class="mobile-menu">
+        <img style="width: 80px;" src="Assets/img/logo web.png" />
+        <button id="hamburger-buotton" class="hamburger-button">☰</button>
+    </div>
+    
+    </nav>
+
+    <div id="mobile-menu-list" class="mobile-menu-list mobile-menu-hide">
+        <a href="index.html" class="menu-active">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact Me</a>
+    </div>
+
+    <!-- MAIN CONTENT TESTIMONIAL -->
+
+    <main>
+        <h1 style="text-align: center">My Testimonials</h1>
+        <h3 style="text-align: center">Rating By Stars</h3>
+
+        <!-- Stara Button -->
+        <div class="testimonial-star-buttons">
+            <button onclick="showAllTestimonials()">All</button>
+            <button onclick="filterTestimonialsByStar(1)">1★</button>
+            <button onclick="filterTestimonialsByStar(2)">2★</button>
+            <button onclick="filterTestimonialsByStar(3)">3★</button>
+            <button onclick="filterTestimonialsByStar(4)">4★</button>
+            <button onclick="filterTestimonialsByStar(5)">5★</button>
+        </div>
+
+        <!-- TESTIMONIAL LIST -->
+         <div id="testimonialsContainer" class="testimonial-list">
+            <!-- <article>
+                <img src="Assets/img/1.jpg" alt="testimonial-image">
+                <p class="testimonial-item-caption">
+                    <i>"Keren banget websitenya!"</i>
+                </p>
+                <p style="text-align: right">- Faqihudin</p>
+                <p style="text-align: right; font-weight: bold" >5★</p>
+            </article> -->
+            <p>Loading...</p>
+         </div>
+    </main>
+
+    
+    <script src="Assets/js/navbar.js"></script>
+    <script src="Assets/js/testimonials.js"></script>
+</body>
+
+</html>
