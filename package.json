@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "name": "tugas-dumbways-buat-card",
+  "version": "1.0.0",
+  "description": "My first personal web",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faqihudinfullstack/personal-web-b60.git"
+  },
+  "author": "Faqih U",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faqihudinfullstack/personal-web-b60/issues"
+  },
+  "homepage": "https://github.com/faqihudinfullstack/personal-web-b60#readme"
+}
