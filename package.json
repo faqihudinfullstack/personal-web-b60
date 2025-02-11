@@ -1,15 +1,15 @@
 {
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "hbs": "^4.2.0"
   },
   "name": "tugas-dumbways-buat-card",
   "version": "1.0.0",
   "description": "My first personal web",
   "main": "server.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
