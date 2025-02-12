@@ -243,6 +243,7 @@ nav {
 }
 
 .blog-post-button {
+    text-decoration: none;
     font-size: 16px;
     font-family: "Poppins", serif;
     background-color: orangered;
