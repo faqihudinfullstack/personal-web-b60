@@ -1,10 +1,20 @@
 const express = require("express");
 const app = express();
-const port = 3000;
 const hbs = require("hbs");
 const path = require("path");
+const methodOverride = require("method-override");
 
+const {
+  renderBlog,
+  renderBlogDetail,
+  renderBlogEdit,
+  createBlogg,
+  updateBlog,
+  deleteBlog,
+} = require("./controllers/controller-v1");
 const { formatDateToWIB, getRelativeTime } = require("./utils/time");
+
+const port = 3000;
 
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "./views"));
@@ -12,6 +22,7 @@ app.set("views", path.join(__dirname, "./views"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("Assets"));
+app.use(methodOverride("_method"));
 
 hbs.registerPartials(__dirname + "/views/partials", function (err) {});
 hbs.registerHelper("equal", function (a, b) {
@@ -20,8 +31,6 @@ hbs.registerHelper("equal", function (a, b) {
 
 hbs.registerHelper("formatDateToWIB", formatDateToWIB);
 hbs.registerHelper("getRelativeTime", getRelativeTime);
-
-let blogs = [];
 
 // HALAMAN HOME
 
@@ -39,10 +48,7 @@ app.get("/contact", (req, res) => {
 });
 
 // Blog List
-app.get("/blog", (req, res) => {
-  console.log(blogs);
-  res.render("blog-list", { blogs: blogs });
-});
+app.get("/blog", renderBlog);
 
 //Create Blog Page
 app.get("/blog-create", (req, res) => {
@@ -51,33 +57,20 @@ app.get("/blog-create", (req, res) => {
   res.render("blog-create");
 });
 
-// Submit New Blog
-app.post("/blog-create", (req, res) => {
-  const { title, content } = req.body; // title dan content adalah properti milik req.body
-  console.log("judulnya adalah", title);
-  console.log("contentnya :", content);
+// Submit Create New Blog
+app.post("/blog-create", createBlogg);
 
-  let image = "https://picsum.photos/200/150";
+// Render Edit Blog
+app.get("/blog-edit/:id", renderBlogEdit);
 
-  let newblog = {
-    title: title,
-    content: content,
-    image: image,
-    author: "M Abdurrahman Faqihudn",
-    postedAt: new Date(),
-  };
+// Submit/Save Edit Blog
+app.patch("/blog-update/:id", updateBlog);
 
-  blogs.push(newblog);
-
-  res.redirect("/blog");
-});
+// DELET EXISTING BLOG
+app.delete("/blog/:id", deleteBlog);
 
 // Blog Detail
-app.get("/blog/:id", (req, res) => {
-  // res.send("Hello express! This is homepage");
-
-  res.render("blog-detail");
-});
+app.get("/blog/:id", renderBlogDetail);
 
 // Testimonials
 app.get("/testimonials", (req, res) => {
