@@ -1,3 +1,8 @@
+const { Sequelize, QueryTypes } = require("sequelize");
+const config = require("../config/config.json");
+
+const sequelize = new Sequelize(config.development);
+
 let blogs = [
   {
     title: "Pasar Coding Indonesia",
@@ -28,8 +33,11 @@ function renderBlogDetail(req, res) {
   res.render("blog-detail", { blog: blogYangDipilih });
 }
 
-function renderBlog(req, res) {
-  //   console.log(blogs);
+async function renderBlog(req, res) {
+  const blogs = await sequelize.query(`SELECT * FROM public."Blogs"`, {
+    type: QueryTypes.SELECT,
+  });
+  console.log(blogs);
   res.render("blog-list", { blogs: blogs });
 }
 
