@@ -78,6 +78,7 @@ nav {
 /* PROFILE CARD */
 #card-section {
     flex: 1;
+    
 }
 .profile-card {
     border-style:solid; 
@@ -92,13 +93,14 @@ nav {
     /* margin: 100px auto; */
     flex: 1;
     padding: 15px;
+    
 
 }
 
 /* PROFILE INTRODUCTION */
 
 #introduction {
-    flex: 2.5;
+    flex: 2,5;
 }
 
 #what-i-do h1 {

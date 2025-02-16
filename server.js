@@ -5,13 +5,17 @@ const path = require("path");
 const methodOverride = require("method-override");
 
 const {
-  renderBlog,
-  renderBlogDetail,
   renderBlogEdit,
   createBlogg,
   updateBlog,
-  deleteBlog,
 } = require("./controllers/controller-v1");
+
+const {
+  renderBlog,
+  renderBlogDetail,
+  deleteBlog,
+} = require("./controllers/controller-v2");
+
 const { formatDateToWIB, getRelativeTime } = require("./utils/time");
 
 const port = 3000;
@@ -78,19 +82,8 @@ app.get("/testimonials", (req, res) => {
   res.render("testimonials");
 });
 
-// REQUEST PARAMS
-
-app.get("/about/:id", (req, res) => {
-  const id = req.params.id;
-  res.send(`Hello ini halaman tentang ${id}`);
-});
-
-// REQUEST QUARY
-
-app.get("/blog", (req, res) => {
-  const { title, author, year } = req.query;
-
-  res.send(`ini halaman blog ${title} dengan author ${author} tahun ${year}`);
+app.get("*", (req, res) => {
+  res.render("page-404");
 });
 
 app.listen(port, () => {
