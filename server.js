@@ -4,16 +4,16 @@ const hbs = require("hbs");
 const path = require("path");
 const methodOverride = require("method-override");
 
-const {
-  renderBlogEdit,
-  createBlogg,
-  updateBlog,
-} = require("./controllers/controller-v1");
+// const { renderBlogEdit, updateBlog } = require("./controllers/controller-v1");
 
 const {
   renderBlog,
   renderBlogDetail,
   deleteBlog,
+  renderBlogCreate,
+  createBlog,
+  renderBlogEdit,
+  updateBlog,
 } = require("./controllers/controller-v2");
 
 const { formatDateToWIB, getRelativeTime } = require("./utils/time");
@@ -54,14 +54,10 @@ app.get("/contact", (req, res) => {
 app.get("/blog", renderBlog);
 
 //Create Blog Page
-app.get("/blog-create", (req, res) => {
-  // res.send("Hello express! This is homepage");
-
-  res.render("blog-create");
-});
+app.get("/blog-create", renderBlogCreate);
 
 // Submit Create New Blog
-app.post("/blog-create", createBlogg);
+app.post("/blog-create", createBlog);
 
 // Render Edit Blog
 app.get("/blog-edit/:id", renderBlogEdit);

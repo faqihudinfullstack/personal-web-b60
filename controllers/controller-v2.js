@@ -34,10 +34,27 @@ async function renderBlogDetail(req, res) {
 
 async function renderBlogCreate(req, res) {
   //render halaman create blog
+  res.render("blog-create");
 }
 
 async function createBlog(req, res) {
   //create blog submission
+  const { title, content } = req.body; // title dan content adalah properti milik req.body
+  console.log("judulnya adalah", title);
+  console.log("contentnya :", content);
+
+  let dummyImage = "https://picsum.photos/200/150";
+
+  const newBlog = {
+    title, // ini saja dengan penulisan title: title,
+    content,
+    image: dummyImage,
+  };
+
+  const resultSubmit = await Blog.create(newBlog); //apa resultnya ketika disubmit gagal atau berhasil
+  console.log("result creating blog", resultSubmit);
+
+  res.redirect("/blog"); //ini adalah URL bukan nama fail
 }
 
 async function deleteBlog(req, res) {
@@ -56,10 +73,56 @@ async function deleteBlog(req, res) {
 
 async function renderBlogEdit(req, res) {
   //render halaman edit blog
+  const id = req.params.id;
+
+  const blogYangDipilih = await Blog.findOne({
+    where: {
+      id: id,
+    },
+  });
+
+  if (blogYangDipilih === null) {
+    res.render("page-404");
+  } else {
+    console.log("v2 blog detail :", blogYangDipilih);
+
+    res.render("blog-edit", { blog: blogYangDipilih });
+  }
 }
 
 async function updateBlog(req, res) {
   //update blog submission
+
+  const id = req.params.id;
+  const { title, content } = req.body;
+  console.log("judulnya adalah", title);
+  console.log("contentnya :", content);
+
+  const updateResult = await Blog.update(
+    {
+      // form edit
+      title,
+      content,
+      updatedAt: sequelize.fn("NOW"),
+    },
+    {
+      // where clause atau filter yg mana yg mau diedit
+      where: {
+        id,
+      },
+    }
+  );
+
+  console.log("result update", updateResult);
+  res.redirect("/blog");
 }
 
-module.exports = { renderBlog, renderBlogDetail, deleteBlog };
+module.exports = {
+  renderBlog,
+  renderBlogDetail,
+  deleteBlog,
+  renderBlogCreate,
+  createBlog,
+  renderBlogEdit,
+  updateBlog,
+};
